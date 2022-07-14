@@ -27,11 +27,12 @@
                 android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/circle"
+                android:background="@color/material_dynamic_secondary30"
                 android:onClick="parButton"
                 android:text="@string/par"
                 android:textColor="@android:color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="#009688" />
 
             <Button
                 android:id="@+id/clearButton"
@@ -40,11 +41,12 @@
                 android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/circle"
+                android:background="@color/material_dynamic_secondary30"
                 android:onClick="clearButton"
                 android:text="@string/clear"
                 android:textColor="@android:color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="#673AB7" />
 
             <Button
                 android:id="@+id/deleteButton"
@@ -53,12 +55,13 @@
                 android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="2"
-                android:background="@drawable/circle"
-                android:backgroundTint="@android:color/holo_red_dark"
+                android:background="@color/material_dynamic_secondary30"
+                android:backgroundTint="#673AB7"
                 android:onClick="deleteButton"
                 android:text="@string/delete"
                 android:textColor="@android:color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="@null" />
 
         </TableRow>
 
@@ -73,11 +76,12 @@
                 android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/circle"
+                android:background="@color/material_dynamic_secondary30"
                 android:onClick="percentButton"
                 android:text="@string/percent"
                 android:textColor="@android:color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="#009688" />
 
             <Button
                 android:id="@+id/fractionButton"
@@ -86,11 +90,12 @@
                 android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/circle"
+                android:background="@color/material_dynamic_secondary30"
                 android:onClick="fractionButton"
                 android:text="@string/fraction"
                 android:textColor="@android:color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="#009688" />
 
             <Button
                 android:id="@+id/exponentButton"
@@ -99,11 +104,12 @@
                 android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/circle"
+                android:background="@color/material_dynamic_secondary30"
                 android:onClick="exponentButton"
                 android:text="@string/exponent"
                 android:textColor="@android:color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="#009688" />
 
             <Button
                 android:id="@+id/divideButton"
@@ -112,11 +118,12 @@
                 android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/circle"
+                android:background="@color/material_dynamic_secondary30"
                 android:onClick="divideButton"
                 android:text="@string/divide"
                 android:textColor="@android:color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="#2196F3" />
         </TableRow>
 
         <TableRow
@@ -130,7 +137,8 @@
                 android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/circle"
+                android:background="@color/material_dynamic_secondary30"
+                app:backgroundTint="@null"
                 android:onClick="sevenButton"
                 android:text="@string/seven"
                 android:textColor="@android:color/black"
@@ -143,7 +151,8 @@
                 android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/circle"
+                android:background="@color/material_dynamic_secondary30"
+                app:backgroundTint="@null"
                 android:onClick="eightButton"
                 android:text="@string/eight"
                 android:textColor="@android:color/black"
@@ -156,7 +165,8 @@
                 android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/circle"
+                android:background="@color/material_dynamic_secondary30"
+                app:backgroundTint="@null"
                 android:onClick="nineButton"
                 android:text="@string/nine"
                 android:textColor="@android:color/black"
@@ -169,11 +179,12 @@
                 android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/circle"
+                android:background="@color/material_dynamic_secondary30"
                 android:onClick="multiplyButton"
                 android:text="@string/multiply"
                 android:textColor="@android:color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="#2196F3" />
         </TableRow>
 
         <TableRow
@@ -187,7 +198,8 @@
                 android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/circle"
+                android:background="@color/material_dynamic_secondary30"
+                app:backgroundTint="@null"
                 android:onClick="fourButton"
                 android:text="@string/four"
                 android:textColor="@android:color/black"
@@ -200,7 +212,8 @@
                 android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/circle"
+                android:background="@color/material_dynamic_secondary30"
+                app:backgroundTint="@null"
                 android:onClick="fiveButton"
                 android:text="@string/five"
                 android:textColor="@android:color/black"
@@ -213,7 +226,8 @@
                 android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/circle"
+                android:background="@color/material_dynamic_secondary30"
+                app:backgroundTint="@null"
                 android:onClick="sixButton"
                 android:text="@string/six"
                 android:textColor="@android:color/black"
@@ -226,11 +240,12 @@
                 android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/circle"
+                android:background="@color/material_dynamic_secondary30"
                 android:onClick="minusButton"
                 android:text="@string/minus"
                 android:textColor="@android:color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="#2196F3" />
         </TableRow>
 
         <TableRow
@@ -244,7 +259,8 @@
                 android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/circle"
+                android:background="@color/material_dynamic_secondary30"
+                app:backgroundTint="@null"
                 android:onClick="oneButton"
                 android:text="@string/one"
                 android:textColor="@android:color/black"
@@ -257,7 +273,8 @@
                 android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/circle"
+                android:background="@color/material_dynamic_secondary30"
+                app:backgroundTint="@null"
                 android:onClick="twoButton"
                 android:text="@string/two"
                 android:textColor="@android:color/black"
@@ -270,7 +287,8 @@
                 android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/circle"
+                android:background="@color/material_dynamic_secondary30"
+                app:backgroundTint="@null"
                 android:onClick="threeButton"
                 android:text="@string/three"
                 android:textColor="@android:color/black"
@@ -283,11 +301,12 @@
                 android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/circle"
+                android:background="@color/material_dynamic_secondary30"
                 android:onClick="plusButton"
                 android:text="@string/plus"
                 android:textColor="@android:color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="#2196F3" />
         </TableRow>
 
         <TableRow
@@ -301,11 +320,12 @@
                 android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/circle"
+                android:background="@color/material_dynamic_secondary30"
                 android:onClick="plusMinusButton"
                 android:text="@string/plusMinus"
                 android:textColor="@android:color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="#009688" />
 
             <Button
                 android:id="@+id/zeroButton"
@@ -314,7 +334,8 @@
                 android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/circle"
+                android:background="@color/material_dynamic_secondary30"
+                app:backgroundTint="@null"
                 android:onClick="zeroButton"
                 android:text="@string/zero"
                 android:textColor="@android:color/black"
@@ -327,11 +348,12 @@
                 android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/circle"
+                android:background="@color/material_dynamic_secondary30"
                 android:onClick="decimalButton"
                 android:text="@string/decimal"
                 android:textColor="@android:color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="#009688" />
 
             <Button
                 android:id="@+id/equalsButton"
@@ -340,12 +362,13 @@
                 android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/circle"
-                android:backgroundTint="#43A047"
+                android:background="@color/material_dynamic_secondary30"
+                android:backgroundTint="#2196F3"
                 android:onClick="equalsButton"
                 android:text="@string/equals"
                 android:textColor="@android:color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="@null" />
         </TableRow>
     </TableLayout>
 
