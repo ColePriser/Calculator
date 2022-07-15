@@ -26,5 +26,5 @@
     <string name="clear">C</string>
     <string name="par">( )</string>
 
-    <string name="display">Enter Value</string>
+    <string name="displayText">Enter Value</string>
 </resources>
