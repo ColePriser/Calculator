@@ -21,18 +21,19 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/parButton"
+                android:id="@+id/percentButton"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@color/material_dynamic_secondary30"
-                android:onClick="parButton"
-                android:text="@string/par"
+                android:onClick="percentButton"
+                android:text="@string/percent"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
-                app:backgroundTint="#009688" />
+                app:backgroundTint="#009688"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/clearButton"
@@ -46,7 +47,8 @@
                 android:text="@string/clear"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
-                app:backgroundTint="#673AB7" />
+                app:backgroundTint="#673AB7"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/deleteButton"
@@ -61,27 +63,14 @@
                 android:text="@string/delete"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
-                app:backgroundTint="@null" />
+                app:backgroundTint="@null"
+                tools:ignore="TextContrastCheck" />
 
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <Button
-                android:id="@+id/percentButton"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@color/material_dynamic_secondary30"
-                android:onClick="percentButton"
-                android:text="@string/percent"
-                android:textColor="@android:color/black"
-                android:textSize="24sp"
-                app:backgroundTint="#009688" />
 
             <Button
                 android:id="@+id/fractionButton"
@@ -95,21 +84,38 @@
                 android:text="@string/fraction"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
-                app:backgroundTint="#009688" />
+                app:backgroundTint="#009688"
+                tools:ignore="TextContrastCheck" />
 
             <Button
-                android:id="@+id/exponentButton"
+                android:id="@+id/squareRootButton"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@color/material_dynamic_secondary30"
-                android:onClick="exponentButton"
-                android:text="@string/exponent"
+                android:onClick="squareRootButton"
+                android:text="@string/squareRoot"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
-                app:backgroundTint="#009688" />
+                app:backgroundTint="#009688"
+                tools:ignore="TextContrastCheck" />
+
+            <Button
+                android:id="@+id/squaredButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@color/material_dynamic_secondary30"
+                android:onClick="squaredButton"
+                android:text="@string/squared"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                app:backgroundTint="#009688"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/divideButton"
@@ -123,7 +129,8 @@
                 android:text="@string/divide"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
-                app:backgroundTint="#2196F3" />
+                app:backgroundTint="#2196F3"
+                tools:ignore="TextContrastCheck" />
         </TableRow>
 
         <TableRow
@@ -138,11 +145,12 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@color/material_dynamic_secondary30"
-                app:backgroundTint="@null"
                 android:onClick="sevenButton"
                 android:text="@string/seven"
                 android:textColor="@android:color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="@null"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/eightButton"
@@ -152,11 +160,12 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@color/material_dynamic_secondary30"
-                app:backgroundTint="@null"
                 android:onClick="eightButton"
                 android:text="@string/eight"
                 android:textColor="@android:color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="@null"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/nineButton"
@@ -166,11 +175,12 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@color/material_dynamic_secondary30"
-                app:backgroundTint="@null"
                 android:onClick="nineButton"
                 android:text="@string/nine"
                 android:textColor="@android:color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="@null"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/multiplyButton"
@@ -184,7 +194,8 @@
                 android:text="@string/multiply"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
-                app:backgroundTint="#2196F3" />
+                app:backgroundTint="#2196F3"
+                tools:ignore="TextContrastCheck" />
         </TableRow>
 
         <TableRow
@@ -199,11 +210,12 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@color/material_dynamic_secondary30"
-                app:backgroundTint="@null"
                 android:onClick="fourButton"
                 android:text="@string/four"
                 android:textColor="@android:color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="@null"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/fiveButton"
@@ -213,11 +225,12 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@color/material_dynamic_secondary30"
-                app:backgroundTint="@null"
                 android:onClick="fiveButton"
                 android:text="@string/five"
                 android:textColor="@android:color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="@null"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/sixButton"
@@ -227,11 +240,12 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@color/material_dynamic_secondary30"
-                app:backgroundTint="@null"
                 android:onClick="sixButton"
                 android:text="@string/six"
                 android:textColor="@android:color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="@null"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/minusButton"
@@ -245,7 +259,8 @@
                 android:text="@string/minus"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
-                app:backgroundTint="#2196F3" />
+                app:backgroundTint="#2196F3"
+                tools:ignore="TextContrastCheck" />
         </TableRow>
 
         <TableRow
@@ -260,11 +275,12 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@color/material_dynamic_secondary30"
-                app:backgroundTint="@null"
                 android:onClick="oneButton"
                 android:text="@string/one"
                 android:textColor="@android:color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="@null"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/twoButton"
@@ -274,11 +290,12 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@color/material_dynamic_secondary30"
-                app:backgroundTint="@null"
                 android:onClick="twoButton"
                 android:text="@string/two"
                 android:textColor="@android:color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="@null"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/threeButton"
@@ -288,11 +305,12 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@color/material_dynamic_secondary30"
-                app:backgroundTint="@null"
                 android:onClick="threeButton"
                 android:text="@string/three"
                 android:textColor="@android:color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="@null"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/plusButton"
@@ -306,7 +324,8 @@
                 android:text="@string/plus"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
-                app:backgroundTint="#2196F3" />
+                app:backgroundTint="#2196F3"
+                tools:ignore="TextContrastCheck" />
         </TableRow>
 
         <TableRow
@@ -325,7 +344,8 @@
                 android:text="@string/plusMinus"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
-                app:backgroundTint="#009688" />
+                app:backgroundTint="#009688"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/zeroButton"
@@ -335,11 +355,12 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@color/material_dynamic_secondary30"
-                app:backgroundTint="@null"
                 android:onClick="zeroButton"
                 android:text="@string/zero"
                 android:textColor="@android:color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:backgroundTint="@null"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/decimalButton"
@@ -353,7 +374,8 @@
                 android:text="@string/decimal"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
-                app:backgroundTint="#009688" />
+                app:backgroundTint="#009688"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/equalsButton"
@@ -368,7 +390,8 @@
                 android:text="@string/equals"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
-                app:backgroundTint="@null" />
+                app:backgroundTint="@null"
+                tools:ignore="TextContrastCheck" />
         </TableRow>
     </TableLayout>
 

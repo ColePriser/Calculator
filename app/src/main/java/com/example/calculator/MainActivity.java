@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    //⌫ √x ÷ × x²
 
     private void updateDisplayText(String add) {
         String prev = displayText.getText().toString();
@@ -103,8 +104,8 @@ public class MainActivity extends AppCompatActivity {
         updateDisplayText("÷");
     }
 
-    public void exponentButton(View view) {
-        updateDisplayText("^");
+    public void squaredButton(View view) {
+
     }
 
     public void fractionButton(View view) {
@@ -115,8 +116,7 @@ public class MainActivity extends AppCompatActivity {
         updateDisplayText("%");
     }
 
-    public void parButton(View view) {
-        updateDisplayText("()");
+    public void squareRootButton(View view) {
     }
 
     public void clearButton(View view) {
