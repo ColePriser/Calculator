@@ -106,11 +106,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void squaredButton(View view) {
-
+        updateDisplayText("^2");
     }
 
     public void fractionButton(View view) {
-
     }
 
     public void percentButton(View view) {
@@ -118,10 +117,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void squareRootButton(View view) {
+        updateDisplayText("^1/2");
     }
 
-    public void clearButton(View view) {
+    public void fullClearButton(View view) {
         displayText.setText("");
+    }
+
+    public void topClearButton(View view) {
+
     }
 
     public void deleteButton(View view) {
