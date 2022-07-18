@@ -3,6 +3,7 @@ package com.example.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.widget.EditText;
 
@@ -124,6 +125,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void deleteButton(View view) {
+        int len = displayText.getText().length();
+        int index = displayText.getSelectionStart();
+        if (index != 0) {
+            if (len != 0) {
+                SpannableStringBuilder newDisplay = (SpannableStringBuilder) displayText.getText();
+                newDisplay.replace(index - 1, index, "");
+                displayText.setText(newDisplay);
+                displayText.setSelection(index - 1);
+            }
+        }
 
     }
 }
