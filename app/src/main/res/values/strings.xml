@@ -28,4 +28,5 @@
     <string name="squareRoot">√x</string>
 
     <string name="displayText">Enter Value</string>
+    <string name="historyText"></string>
 </resources>

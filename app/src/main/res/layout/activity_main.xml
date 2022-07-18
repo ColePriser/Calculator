@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -48,7 +49,7 @@
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
                 app:backgroundTint="#673AB7"
-                tools:ignore="TextContrastCheck"/>
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/fullClearButton"
@@ -410,7 +411,7 @@
         </TableRow>
     </TableLayout>
 
-    <EditText
+    <TextView
         android:id="@+id/displayText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -424,5 +425,21 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/historyText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="100dp"
+        android:autofillHints="false"
+        android:inputType="none"
+        android:text="@string/historyText"
+        android:textAlignment="textEnd"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/displayText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        displayText = findViewById(R.id.displayText);
+        //displayText = findViewById(R.id.displayText);
         displayText.setShowSoftInputOnFocus(false);
 
         displayText.setOnClickListener(new View.OnClickListener() {
