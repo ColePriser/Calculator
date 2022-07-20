@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView displayText;
     private String solutionText;
-    private String inputText;
+    private StringBuilder currentText;
     private Button backspace;
     private Button clear;
     private Button plusMinus;
@@ -67,49 +67,53 @@ public class MainActivity extends AppCompatActivity {
         Button tempButton = (Button) view;
         String input = tempButton.getText().toString();
         switch (input) {
-            case "backspace":
+            case "del":
+                currentText.setLength(currentText.length() - 1);
                 break;
-            case "clear":
+            case "AC":
+                currentText.setLength(0);
                 break;
-            case "plusMinus":
+            case "+/-":
+                currentText.append("-");
                 break;
-            case "percent":
+            case "%":
+                SolveCurrentInput();
+                currentText.append("%");
                 break;
-            case "exponent":
+            case "^":
+                SolveCurrentInput();
+                currentText.append("^");
                 break;
-            case "divide":
+            case "÷":
+                SolveCurrentInput();
+                currentText.append("/");
                 break;
-            case "zero":
+            case "x":
+                SolveCurrentInput();
+                currentText.append("*");
                 break;
-            case "one":
+            case "-":
+                SolveCurrentInput();
+                currentText.append("-");
                 break;
-            case "two":
+            case "+":
+                SolveCurrentInput();
+                currentText.append("+");
                 break;
-            case "three":
+            case "=":
+                SolveCurrentInput();
+                solutionText = currentText.toString();
                 break;
-            case "four":
-                break;
-            case "five":
-                break;
-            case "six":
-                break;
-            case "seven":
-                break;
-            case "eight":
-                break;
-            case "nine":
-                break;
-            case "multiply":
-                break;
-            case "minus":
-                break;
-            case "plus":
-                break;
-            case "decimal":
-                break;
-            case "equals":
-                break;
+            default:
+                if (currentText == null) {
+                    currentText.setLength(0);
+                }
         }
+
+    }
+
+    public void SolveCurrentInput() {
+
     }
     //⌫ √x ÷ × x²
 }
