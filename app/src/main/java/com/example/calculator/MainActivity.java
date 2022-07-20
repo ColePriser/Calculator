@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         Button tempButton = (Button) view;
         String input = tempButton.getText().toString();
         switch (input) {
-            case "del":
+            case "⌫":
                 currentText.setLength(currentText.length() - 1);
                 break;
             case "AC":
@@ -105,11 +105,9 @@ public class MainActivity extends AppCompatActivity {
                 solutionText = currentText.toString();
                 break;
             default:
-                if (currentText == null) {
-                    currentText.setLength(0);
-                }
+                currentText.append(input);
         }
-
+        displayText.setText(currentText.toString());
     }
 
     public void SolveCurrentInput() {
