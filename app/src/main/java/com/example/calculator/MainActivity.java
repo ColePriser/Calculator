@@ -39,17 +39,77 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //displayText = findViewById(R.id.displayText);
-        displayText.setShowSoftInputOnFocus(false);
+        displayText = findViewById(R.id.displayText);
+        backspace = findViewById(R.id.backspace);
+        clear = findViewById(R.id.clear);
+        plusMinus = findViewById(R.id.plusMinus);
+        percent = findViewById(R.id.percent);
+        exponent = findViewById(R.id.exponent);
+        divide = findViewById(R.id.divide);
+        zero = findViewById(R.id.zero);
+        one = findViewById(R.id.one);
+        two = findViewById(R.id.two);
+        three = findViewById(R.id.three);
+        four = findViewById(R.id.four);
+        five = findViewById(R.id.five);
+        six = findViewById(R.id.six);
+        seven = findViewById(R.id.seven);
+        eight = findViewById(R.id.eight);
+        nine = findViewById(R.id.nine);
+        multiply = findViewById(R.id.multiply);
+        minus = findViewById(R.id.minus);
+        plus = findViewById(R.id.plus);
+        decimal = findViewById(R.id.decimal);
+        equals = findViewById(R.id.equals);
+    }
 
-        displayText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (getString(R.string.displayText).equals(displayText.getText().toString())) {
-                    displayText.setText("");
-                }
-            }
-        });
+    public void calculatorPressButton(View view) {
+        Button tempButton = (Button) view;
+        String input = tempButton.getText().toString();
+        switch (input) {
+            case "backspace":
+                break;
+            case "clear":
+                break;
+            case "plusMinus":
+                break;
+            case "percent":
+                break;
+            case "exponent":
+                break;
+            case "divide":
+                break;
+            case "zero":
+                break;
+            case "one":
+                break;
+            case "two":
+                break;
+            case "three":
+                break;
+            case "four":
+                break;
+            case "five":
+                break;
+            case "six":
+                break;
+            case "seven":
+                break;
+            case "eight":
+                break;
+            case "nine":
+                break;
+            case "multiply":
+                break;
+            case "minus":
+                break;
+            case "plus":
+                break;
+            case "decimal":
+                break;
+            case "equals":
+                break;
+        }
     }
     //⌫ √x ÷ × x²
 }
