@@ -164,7 +164,7 @@
             android:background="@drawable/keyboard_btn"
             android:onClick="calculatorPressButton"
             android:text="x"
-            android:textSize="30dp"
+            android:textSize="23dp"
             app:backgroundTint="#673AB7" />
 
     </LinearLayout>
@@ -220,7 +220,7 @@
             android:background="@drawable/keyboard_btn"
             android:onClick="calculatorPressButton"
             android:text="-"
-            android:textSize="30dp"
+            android:textSize="40dp"
             app:backgroundTint="#673AB7" />
 
     </LinearLayout>
