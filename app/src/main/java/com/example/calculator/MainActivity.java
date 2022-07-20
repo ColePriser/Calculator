@@ -10,6 +10,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private TextView displayText;
+    private String solutionText;
     private StringBuilder currentText = new StringBuilder();
 
     @Override
@@ -59,32 +60,56 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
             case "%":
-                SolveCurrentInput();
-                currentText.append("%");
+                if (currentText.charAt(currentText.length() - 1) != '%') {
+                    SolveCurrentInput();
+                    currentText.append("%");
+                }
                 break;
             case "^":
-                SolveCurrentInput();
-                currentText.append("^");
+                if (currentText.charAt(currentText.length() - 1) != '^') {
+                    SolveCurrentInput();
+                    currentText.append("^");
+                }
                 break;
             case "÷":
-                SolveCurrentInput();
-                currentText.append("/");
+                if (currentText.charAt(currentText.length() - 1) != '/') {
+                    SolveCurrentInput();
+                    currentText.append("/");
+                }
                 break;
             case "x":
-                SolveCurrentInput();
-                currentText.append("*");
+                if (currentText.charAt(currentText.length() - 1) != '*') {
+                    SolveCurrentInput();
+                    currentText.append("*");
+                }
                 break;
             case "-":
-                SolveCurrentInput();
-                currentText.append("-");
+                if (currentText.charAt(currentText.length() - 1) != '-') {
+                    SolveCurrentInput();
+                    currentText.append("-");
+                }
                 break;
             case "+":
-                SolveCurrentInput();
-                currentText.append("+");
+                if (currentText.charAt(currentText.length() - 1) != '+') {
+                    SolveCurrentInput();
+                    currentText.append("+");
+                }
                 break;
             case "=":
                 SolveCurrentInput();
-                String solutionText = currentText.toString();
+                solutionText = currentText.toString();
+                break;
+            case ".":
+                boolean hasDecimal = false;
+                for (int x = 0; x < currentText.length(); x++) {
+                    if (currentText.charAt(x) == '.') {
+                        hasDecimal = true;
+                        break;
+                    }
+                }
+                if (!hasDecimal) {
+                    currentText.append(".");
+                }
                 break;
             default:
                 currentText.append(input);
@@ -93,7 +118,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void SolveCurrentInput() {
-
+        if (currentText.toString().split("\\+").length == 2) {
+            String currentNumber[] = currentText.toString().split("\\+");
+            double sumOfCurrent = Double.parseDouble(currentNumber[0]) + Double.parseDouble(currentNumber[1]);
+            currentText.setLength(0);
+            currentText = new StringBuilder(Double.toString(sumOfCurrent));
+        }
+        displayText.setText(currentText.toString());
     }
     //⌫ √x ÷ × x²
 }
