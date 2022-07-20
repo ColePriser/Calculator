@@ -3,13 +3,36 @@ package com.example.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.text.SpannableStringBuilder;
 import android.view.View;
-import android.widget.EditText;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText displayText;
+    private TextView displayText;
+    private String solutionText;
+    private String inputText;
+    private Button backspace;
+    private Button clear;
+    private Button plusMinus;
+    private Button percent;
+    private Button exponent;
+    private Button divide;
+    private Button zero;
+    private Button one;
+    private Button two;
+    private Button three;
+    private Button four;
+    private Button five;
+    private Button six;
+    private Button seven;
+    private Button eight;
+    private Button nine;
+    private Button multiply;
+    private Button minus;
+    private Button plus;
+    private Button decimal;
+    private Button equals;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,116 +52,4 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     //⌫ √x ÷ × x²
-
-    private void updateDisplayText(String add) {
-        String prev = displayText.getText().toString();
-        int index = displayText.getSelectionStart();
-        displayText.setText(String.format("%s%s%s", prev.substring(0, index), add, prev.substring(index)));
-        displayText.setSelection(index + 1);
-    }
-
-    public void zeroButton(View view) {
-        updateDisplayText("0");
-    }
-
-    public void oneButton(View view) {
-        updateDisplayText("1");
-    }
-
-    public void twoButton(View view) {
-        updateDisplayText("2");
-    }
-
-    public void threeButton(View view) {
-        updateDisplayText("3");
-    }
-
-    public void fourButton(View view) {
-        updateDisplayText("4");
-    }
-
-    public void fiveButton(View view) {
-        updateDisplayText("5");
-    }
-
-    public void sixButton(View view) {
-        updateDisplayText("6");
-    }
-
-    public void sevenButton(View view) {
-        updateDisplayText("7");
-    }
-
-    public void eightButton(View view) {
-        updateDisplayText("8");
-    }
-
-    public void nineButton(View view) {
-        updateDisplayText("9");
-    }
-
-    public void plusMinusButton(View view) {
-        updateDisplayText("-");
-    }
-
-    public void decimalButton(View view) {
-        updateDisplayText(".");
-    }
-
-    public void equalsButton(View view) {
-
-    }
-
-    public void plusButton(View view) {
-        updateDisplayText("+");
-    }
-
-    public void minusButton(View view) {
-        updateDisplayText("-");
-    }
-
-    public void multiplyButton(View view) {
-        updateDisplayText("×");
-    }
-
-    public void divideButton(View view) {
-        updateDisplayText("÷");
-    }
-
-    public void squaredButton(View view) {
-        updateDisplayText("^2");
-    }
-
-    public void fractionButton(View view) {
-    }
-
-    public void percentButton(View view) {
-        updateDisplayText("%");
-    }
-
-    public void squareRootButton(View view) {
-        updateDisplayText("^1/2");
-    }
-
-    public void fullClearButton(View view) {
-        displayText.setText("");
-    }
-
-    public void topClearButton(View view) {
-
-    }
-
-    public void deleteButton(View view) {
-        int len = displayText.getText().length();
-        int index = displayText.getSelectionStart();
-        if (index != 0) {
-            if (len != 0) {
-                SpannableStringBuilder newDisplay = (SpannableStringBuilder) displayText.getText();
-                newDisplay.replace(index - 1, index, "");
-                displayText.setText(newDisplay);
-                displayText.setSelection(index - 1);
-            }
-        }
-
-    }
 }
