@@ -76,14 +76,14 @@
             app:backgroundTint="#3F51B5" />
 
         <Button
-            android:id="@+id/percent"
+            android:id="@+id/sqrt"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="@drawable/keyboard_btn"
             android:onClick="calculatorPressButton"
-            android:text="%"
+            android:text="√"
             android:textSize="30dp"
             app:backgroundTint="#3F51B5" />
 
