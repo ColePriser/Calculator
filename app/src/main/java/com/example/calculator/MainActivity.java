@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         Button backspace = findViewById(R.id.backspace);
         Button clear = findViewById(R.id.clear);
         Button plusMinus = findViewById(R.id.plusMinus);
-        Button percent = findViewById(R.id.percent);
+        Button sqrt = findViewById(R.id.sqrt);
         Button exponent = findViewById(R.id.exponent);
         Button divide = findViewById(R.id.divide);
         Button zero = findViewById(R.id.zero);
@@ -59,45 +59,49 @@ public class MainActivity extends AppCompatActivity {
                     currentText.insert(0, "-");
                 }
                 break;
-            case "%":
-                if (currentText.charAt(currentText.length() - 1) != '%') {
+            case "√":
+                if (!lastCharIsOperator()) {
                     SolveCurrentInput();
-                    currentText.append("%");
+                    String newText = Double.toString(Math.sqrt(Double.parseDouble(currentText.toString())));
+                    currentText.setLength(0);
+                    currentText = new StringBuilder(newText);
                 }
                 break;
             case "^":
-                if (currentText.charAt(currentText.length() - 1) != '^') {
+                if (!lastCharIsOperator()) {
                     SolveCurrentInput();
                     currentText.append("^");
                 }
                 break;
             case "÷":
-                if (currentText.charAt(currentText.length() - 1) != '/') {
+                if (!lastCharIsOperator()) {
                     SolveCurrentInput();
                     currentText.append("/");
                 }
                 break;
             case "x":
-                if (currentText.charAt(currentText.length() - 1) != '*') {
+                if (!lastCharIsOperator()) {
                     SolveCurrentInput();
                     currentText.append("*");
                 }
                 break;
             case "-":
-                if (currentText.charAt(currentText.length() - 1) != '-') {
+                if (!lastCharIsOperator()) {
                     SolveCurrentInput();
                     currentText.append("-");
                 }
                 break;
             case "+":
-                if (currentText.charAt(currentText.length() - 1) != '+') {
+                if (!lastCharIsOperator()) {
                     SolveCurrentInput();
                     currentText.append("+");
                 }
                 break;
             case "=":
-                SolveCurrentInput();
-                solutionText = currentText.toString();
+                if (!lastCharIsOperator()) {
+                    SolveCurrentInput();
+                    solutionText = currentText.toString();
+                }
                 break;
             case ".":
                 boolean hasDecimal = false;
@@ -119,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void SolveCurrentInput() {
         if (currentText.toString().split("\\+").length == 2) {
-            String currentNumber[] = currentText.toString().split("\\+");
+            String[] currentNumber = currentText.toString().split("\\+");
             double sumOfCurrent = Double.parseDouble(currentNumber[0]) + Double.parseDouble(currentNumber[1]);
             currentText.setLength(0);
             currentText = new StringBuilder(Double.toString(sumOfCurrent));
@@ -127,4 +131,14 @@ public class MainActivity extends AppCompatActivity {
         displayText.setText(currentText.toString());
     }
     //⌫ √x ÷ × x²
+
+    public boolean lastCharIsOperator () {
+        char[] operations = {'+', '-', '*', '/', '^'};
+        for (int x = 0; x < 5; x++) {
+            if (currentText.charAt(currentText.length() - 1) == operations[x]) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
