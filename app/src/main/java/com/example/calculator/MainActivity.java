@@ -10,29 +10,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private TextView displayText;
-    private String solutionText;
-    private StringBuilder currentText;
-    private Button backspace;
-    private Button clear;
-    private Button plusMinus;
-    private Button percent;
-    private Button exponent;
-    private Button divide;
-    private Button zero;
-    private Button one;
-    private Button two;
-    private Button three;
-    private Button four;
-    private Button five;
-    private Button six;
-    private Button seven;
-    private Button eight;
-    private Button nine;
-    private Button multiply;
-    private Button minus;
-    private Button plus;
-    private Button decimal;
-    private Button equals;
+    private StringBuilder currentText = new StringBuilder();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,27 +18,27 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         displayText = findViewById(R.id.displayText);
-        backspace = findViewById(R.id.backspace);
-        clear = findViewById(R.id.clear);
-        plusMinus = findViewById(R.id.plusMinus);
-        percent = findViewById(R.id.percent);
-        exponent = findViewById(R.id.exponent);
-        divide = findViewById(R.id.divide);
-        zero = findViewById(R.id.zero);
-        one = findViewById(R.id.one);
-        two = findViewById(R.id.two);
-        three = findViewById(R.id.three);
-        four = findViewById(R.id.four);
-        five = findViewById(R.id.five);
-        six = findViewById(R.id.six);
-        seven = findViewById(R.id.seven);
-        eight = findViewById(R.id.eight);
-        nine = findViewById(R.id.nine);
-        multiply = findViewById(R.id.multiply);
-        minus = findViewById(R.id.minus);
-        plus = findViewById(R.id.plus);
-        decimal = findViewById(R.id.decimal);
-        equals = findViewById(R.id.equals);
+        Button backspace = findViewById(R.id.backspace);
+        Button clear = findViewById(R.id.clear);
+        Button plusMinus = findViewById(R.id.plusMinus);
+        Button percent = findViewById(R.id.percent);
+        Button exponent = findViewById(R.id.exponent);
+        Button divide = findViewById(R.id.divide);
+        Button zero = findViewById(R.id.zero);
+        Button one = findViewById(R.id.one);
+        Button two = findViewById(R.id.two);
+        Button three = findViewById(R.id.three);
+        Button four = findViewById(R.id.four);
+        Button five = findViewById(R.id.five);
+        Button six = findViewById(R.id.six);
+        Button seven = findViewById(R.id.seven);
+        Button eight = findViewById(R.id.eight);
+        Button nine = findViewById(R.id.nine);
+        Button multiply = findViewById(R.id.multiply);
+        Button minus = findViewById(R.id.minus);
+        Button plus = findViewById(R.id.plus);
+        Button decimal = findViewById(R.id.decimal);
+        Button equals = findViewById(R.id.equals);
     }
 
     public void calculatorPressButton(View view) {
@@ -74,7 +52,11 @@ public class MainActivity extends AppCompatActivity {
                 currentText.setLength(0);
                 break;
             case "+/-":
-                currentText.append("-");
+                if (currentText.toString().charAt(0) == '-') {
+                    currentText.deleteCharAt(0);
+                } else {
+                    currentText.insert(0, "-");
+                }
                 break;
             case "%":
                 SolveCurrentInput();
@@ -102,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case "=":
                 SolveCurrentInput();
-                solutionText = currentText.toString();
+                String solutionText = currentText.toString();
                 break;
             default:
                 currentText.append(input);
