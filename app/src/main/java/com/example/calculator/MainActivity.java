@@ -10,7 +10,6 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private TextView displayText;
-    private String solutionText;
     private StringBuilder currentText = new StringBuilder();
 
     @Override
@@ -19,27 +18,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         displayText = findViewById(R.id.displayText);
-        Button backspace = findViewById(R.id.backspace);
-        Button clear = findViewById(R.id.clear);
-        Button plusMinus = findViewById(R.id.plusMinus);
-        Button sqrt = findViewById(R.id.sqrt);
-        Button exponent = findViewById(R.id.exponent);
-        Button divide = findViewById(R.id.divide);
-        Button zero = findViewById(R.id.zero);
-        Button one = findViewById(R.id.one);
-        Button two = findViewById(R.id.two);
-        Button three = findViewById(R.id.three);
-        Button four = findViewById(R.id.four);
-        Button five = findViewById(R.id.five);
-        Button six = findViewById(R.id.six);
-        Button seven = findViewById(R.id.seven);
-        Button eight = findViewById(R.id.eight);
-        Button nine = findViewById(R.id.nine);
-        Button multiply = findViewById(R.id.multiply);
-        Button minus = findViewById(R.id.minus);
-        Button plus = findViewById(R.id.plus);
-        Button decimal = findViewById(R.id.decimal);
-        Button equals = findViewById(R.id.equals);
     }
 
     public void calculatorPressButton(View view) {
@@ -91,10 +69,10 @@ public class MainActivity extends AppCompatActivity {
                     currentText.append("*");
                 }
                 break;
-            case "-":
+            case "ー":
                 if (lastCharIsNotOperator()) {
                     SolveCurrentInput();
-                    currentText.append("-");
+                    currentText.append("ー");
                 }
                 break;
             case "+":
@@ -106,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
             case "=":
                 if (lastCharIsNotOperator()) {
                     SolveCurrentInput();
-                    solutionText = currentText.toString();
                 }
                 break;
             case ".":
@@ -124,9 +101,6 @@ public class MainActivity extends AppCompatActivity {
             default:
                 currentText.append(input);
         }
-        if (currentText.length() > 16) {
-            currentText.setLength(16);
-        }
         displayText.setText(currentText.toString());
     }
 
@@ -137,8 +111,8 @@ public class MainActivity extends AppCompatActivity {
             currentText.setLength(0);
             currentText = new StringBuilder(Double.toString(sumOfCurrent));
         }
-        else if (currentText.toString().split("-").length == 2) {
-            String[] currentNumber = currentText.toString().split("-");
+        else if (currentText.toString().split("ー").length == 2) {
+            String[] currentNumber = currentText.toString().split("ー");
             double subtractOfCurrent = Double.parseDouble(currentNumber[0]) - Double.parseDouble(currentNumber[1]);
             currentText.setLength(0);
             currentText = new StringBuilder(Double.toString(subtractOfCurrent));
@@ -171,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public boolean lastCharIsNotOperator () {
-        char[] operations = {'+', '-', '*', '/', '^'};
+        char[] operations = {'+', 'ー', '*', '/', '^'};
         for (int x = 0; x < 5; x++) {
             if (currentText.charAt(currentText.length() - 1) == operations[x]) {
                 return false;
