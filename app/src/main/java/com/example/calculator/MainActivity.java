@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
             case "√":
-                if (!lastCharIsOperator()) {
+                if (lastCharIsNotOperator()) {
                     SolveCurrentInput();
                     String newText = Double.toString(Math.sqrt(Double.parseDouble(currentText.toString())));
                     currentText.setLength(0);
@@ -74,37 +74,37 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
             case "^":
-                if (!lastCharIsOperator()) {
+                if (lastCharIsNotOperator()) {
                     SolveCurrentInput();
                     currentText.append("^");
                 }
                 break;
             case "÷":
-                if (!lastCharIsOperator()) {
+                if (lastCharIsNotOperator()) {
                     SolveCurrentInput();
                     currentText.append("/");
                 }
                 break;
             case "x":
-                if (!lastCharIsOperator()) {
+                if (lastCharIsNotOperator()) {
                     SolveCurrentInput();
                     currentText.append("*");
                 }
                 break;
             case "-":
-                if (!lastCharIsOperator()) {
+                if (lastCharIsNotOperator()) {
                     SolveCurrentInput();
                     currentText.append("-");
                 }
                 break;
             case "+":
-                if (!lastCharIsOperator()) {
+                if (lastCharIsNotOperator()) {
                     SolveCurrentInput();
                     currentText.append("+");
                 }
                 break;
             case "=":
-                if (!lastCharIsOperator()) {
+                if (lastCharIsNotOperator()) {
                     SolveCurrentInput();
                     solutionText = currentText.toString();
                 }
@@ -137,8 +137,8 @@ public class MainActivity extends AppCompatActivity {
             currentText.setLength(0);
             currentText = new StringBuilder(Double.toString(sumOfCurrent));
         }
-        else if (currentText.toString().split("\\-").length == 2) {
-            String[] currentNumber = currentText.toString().split("\\-");
+        else if (currentText.toString().split("-").length == 2) {
+            String[] currentNumber = currentText.toString().split("-");
             double subtractOfCurrent = Double.parseDouble(currentNumber[0]) - Double.parseDouble(currentNumber[1]);
             currentText.setLength(0);
             currentText = new StringBuilder(Double.toString(subtractOfCurrent));
@@ -149,8 +149,8 @@ public class MainActivity extends AppCompatActivity {
             currentText.setLength(0);
             currentText = new StringBuilder(Double.toString(multiplyOfCurrent));
         }
-        else if (currentText.toString().split("\\/").length == 2) {
-            String[] currentNumber = currentText.toString().split("\\/");
+        else if (currentText.toString().split("/").length == 2) {
+            String[] currentNumber = currentText.toString().split("/");
             double divisionOfCurrent = Double.parseDouble(currentNumber[0]) / Double.parseDouble(currentNumber[1]);
             currentText.setLength(0);
             currentText = new StringBuilder(Double.toString(divisionOfCurrent));
@@ -170,13 +170,13 @@ public class MainActivity extends AppCompatActivity {
         displayText.setText(currentText.toString());
     }
 
-    public boolean lastCharIsOperator () {
+    public boolean lastCharIsNotOperator () {
         char[] operations = {'+', '-', '*', '/', '^'};
         for (int x = 0; x < 5; x++) {
             if (currentText.charAt(currentText.length() - 1) == operations[x]) {
-                return true;
+                return false;
             }
         }
-        return false;
+        return true;
     }
 }
