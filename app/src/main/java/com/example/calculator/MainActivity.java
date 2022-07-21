@@ -65,6 +65,12 @@ public class MainActivity extends AppCompatActivity {
                     String newText = Double.toString(Math.sqrt(Double.parseDouble(currentText.toString())));
                     currentText.setLength(0);
                     currentText = new StringBuilder(newText);
+                    String[] decimal = currentText.toString().split("\\.");
+                    if (decimal.length > 1) {
+                        if (decimal[1].equals("0")) {
+                            currentText = new StringBuilder(decimal[0]);
+                        }
+                    }
                 }
                 break;
             case "^":
@@ -118,6 +124,9 @@ public class MainActivity extends AppCompatActivity {
             default:
                 currentText.append(input);
         }
+        if (currentText.length() > 16) {
+            currentText.setLength(16);
+        }
         displayText.setText(currentText.toString());
     }
 
@@ -128,9 +137,38 @@ public class MainActivity extends AppCompatActivity {
             currentText.setLength(0);
             currentText = new StringBuilder(Double.toString(sumOfCurrent));
         }
+        else if (currentText.toString().split("\\-").length == 2) {
+            String[] currentNumber = currentText.toString().split("\\-");
+            double subtractOfCurrent = Double.parseDouble(currentNumber[0]) - Double.parseDouble(currentNumber[1]);
+            currentText.setLength(0);
+            currentText = new StringBuilder(Double.toString(subtractOfCurrent));
+        }
+        else if (currentText.toString().split("\\*").length == 2) {
+            String[] currentNumber = currentText.toString().split("\\*");
+            double multiplyOfCurrent = Double.parseDouble(currentNumber[0]) * Double.parseDouble(currentNumber[1]);
+            currentText.setLength(0);
+            currentText = new StringBuilder(Double.toString(multiplyOfCurrent));
+        }
+        else if (currentText.toString().split("\\/").length == 2) {
+            String[] currentNumber = currentText.toString().split("\\/");
+            double divisionOfCurrent = Double.parseDouble(currentNumber[0]) / Double.parseDouble(currentNumber[1]);
+            currentText.setLength(0);
+            currentText = new StringBuilder(Double.toString(divisionOfCurrent));
+        }
+        else if (currentText.toString().split("\\^").length == 2) {
+            String[] currentNumber = currentText.toString().split("\\^");
+            double exponentOfCurrent = Math.pow(Double.parseDouble(currentNumber[0]), Double.parseDouble(currentNumber[1]));
+            currentText.setLength(0);
+            currentText = new StringBuilder(Double.toString(exponentOfCurrent));
+        }
+        String[] decimal = currentText.toString().split("\\.");
+        if (decimal.length > 1) {
+            if (decimal[1].equals("0")) {
+                currentText = new StringBuilder(decimal[0]);
+            }
+        }
         displayText.setText(currentText.toString());
     }
-    //⌫ √x ÷ × x²
 
     public boolean lastCharIsOperator () {
         char[] operations = {'+', '-', '*', '/', '^'};
