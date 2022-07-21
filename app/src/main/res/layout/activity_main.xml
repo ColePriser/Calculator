@@ -17,7 +17,7 @@
         android:text="@string/displayText"
         android:textStyle="bold"
         android:textAlignment="textEnd"
-        android:textSize="40sp"
+        android:textSize="30sp"
         android:textColor="@color/white"
         android:background="#63F4B5"
         android:layout_marginTop="10dp"
@@ -219,8 +219,8 @@
             android:layout_weight="1"
             android:background="@drawable/keyboard_btn"
             android:onClick="calculatorPressButton"
-            android:text="-"
-            android:textSize="40dp"
+            android:text="ー"
+            android:textSize="30dp"
             app:backgroundTint="#673AB7" />
 
     </LinearLayout>
