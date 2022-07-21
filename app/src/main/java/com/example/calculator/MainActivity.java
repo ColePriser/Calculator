@@ -87,14 +87,40 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
             case ".":
-                boolean hasDecimal = false;
+                boolean hasOperation = false;
+                int operationIndex = -1;
+                boolean hasDecimalBeforeOperation = false;
+                boolean hasDecimalAfterOperation = false;
                 for (int x = 0; x < currentText.length(); x++) {
-                    if (currentText.charAt(x) == '.') {
-                        hasDecimal = true;
-                        break;
+                    char[] operations = {'+', 'ー', '*', '/', '^'};
+                    for (int y = 0; y < 5; y++) {
+                        if (currentText.charAt(x) == operations[y]) {
+                            operationIndex = y;
+                            hasOperation = true;
+                            break;
+                        }
                     }
                 }
-                if (!hasDecimal) {
+                if (!hasOperation) {
+                    for (int x = 0; x < currentText.length(); x++) {
+                        if (currentText.charAt(x) == '.') {
+                            hasDecimalBeforeOperation = true;
+                            break;
+                        }
+                    }
+                }
+                else {
+                    for (int x = operationIndex; x < currentText.length(); x++) {
+                        if (currentText.charAt(x) == '.') {
+                            hasDecimalAfterOperation = true;
+                            break;
+                        }
+                    }
+                }
+                if (!hasOperation && !hasDecimalBeforeOperation) {
+                    currentText.append(".");
+                }
+                else if (hasOperation && !hasDecimalAfterOperation) {
                     currentText.append(".");
                 }
                 break;
