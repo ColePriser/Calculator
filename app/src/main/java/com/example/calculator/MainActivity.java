@@ -45,13 +45,17 @@ public class MainActivity extends AppCompatActivity {
             case "√":
                 if (lastCharIsNotOperator()) {
                     SolveCurrentInput();
-                    String newText = Double.toString(Math.sqrt(Double.parseDouble(currentText.toString())));
-                    currentText.setLength(0);
-                    currentText = new StringBuilder(newText);
-                    String[] decimal = currentText.toString().split("\\.");
-                    if (decimal.length > 1) {
-                        if (decimal[1].equals("0")) {
-                            currentText = new StringBuilder(decimal[0]);
+                    if (Double.parseDouble(currentText.toString()) < 0) {
+                        currentText = new StringBuilder("error");
+                    } else {
+                        String newText = Double.toString(Math.sqrt(Double.parseDouble(currentText.toString())));
+                        currentText.setLength(0);
+                        currentText = new StringBuilder(newText);
+                        String[] decimal = currentText.toString().split("\\.");
+                        if (decimal.length > 1) {
+                            if (decimal[1].equals("0")) {
+                                currentText = new StringBuilder(decimal[0]);
+                            }
                         }
                     }
                 }
