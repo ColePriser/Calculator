@@ -24,9 +24,7 @@ public class MainActivity extends AppCompatActivity {
         String input = tempButton.getText().toString();
         switch (input) {
             case "⌫":
-                if (currentText.toString().equals("can't divide by zero")) {
-                    currentText.setLength(0);
-                } else if (currentText.toString().equals("error")) {
+                if (currentText.toString().equals("error")) {
                     currentText.setLength(0);
                 } else {
                     currentText.setLength(currentText.length() - 1);
@@ -104,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                     char[] operations = {'+', 'ー', '*', '/', '^'};
                     for (int y = 0; y < 5; y++) {
                         if (currentText.charAt(x) == operations[y]) {
-                            operationIndex = y;
+                            operationIndex = x;
                             hasOperation = true;
                             break;
                         }
@@ -117,8 +115,7 @@ public class MainActivity extends AppCompatActivity {
                             break;
                         }
                     }
-                }
-                else {
+                } else {
                     for (int x = operationIndex; x < currentText.length(); x++) {
                         if (currentText.charAt(x) == '.') {
                             hasDecimalAfterOperation = true;
@@ -128,8 +125,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (!hasOperation && !hasDecimalBeforeOperation) {
                     currentText.append(".");
-                }
-                else if (hasOperation && !hasDecimalAfterOperation) {
+                } else if (hasOperation && !hasDecimalAfterOperation) {
                     currentText.append(".");
                 }
                 break;
@@ -199,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
             }
             currentText.setLength(0);
             if (Double.parseDouble(currentNumber[1]) == 0) {
-                currentText = new StringBuilder("can't divide by zero");
+                currentText = new StringBuilder("error");
             } else if (exception) {
                 currentText = new StringBuilder("error");
             } else {
