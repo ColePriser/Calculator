@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         displayText = findViewById(R.id.displayText);
     }
 
@@ -25,7 +24,13 @@ public class MainActivity extends AppCompatActivity {
         String input = tempButton.getText().toString();
         switch (input) {
             case "⌫":
-                currentText.setLength(currentText.length() - 1);
+                if (currentText.toString().equals("can't divide by zero")) {
+                    currentText.setLength(0);
+                } else if (currentText.toString().equals("error")) {
+                    currentText.setLength(0);
+                } else {
+                    currentText.setLength(currentText.length() - 1);
+                }
                 break;
             case "AC":
                 currentText.setLength(0);
@@ -133,33 +138,85 @@ public class MainActivity extends AppCompatActivity {
     public void SolveCurrentInput() {
         if (currentText.toString().split("\\+").length == 2) {
             String[] currentNumber = currentText.toString().split("\\+");
-            double sumOfCurrent = Double.parseDouble(currentNumber[0]) + Double.parseDouble(currentNumber[1]);
+            boolean exception = false;
+            double sumOfCurrent = 0.0;
+            try {
+                sumOfCurrent = Double.parseDouble(currentNumber[0]) + Double.parseDouble(currentNumber[1]);
+            } catch (Exception e) {
+                exception = true;
+            }
             currentText.setLength(0);
-            currentText = new StringBuilder(Double.toString(sumOfCurrent));
+            if (exception) {
+                currentText = new StringBuilder("error");
+            } else {
+                currentText = new StringBuilder(Double.toString(sumOfCurrent));
+            }
         }
         else if (currentText.toString().split("ー").length == 2) {
             String[] currentNumber = currentText.toString().split("ー");
-            double subtractOfCurrent = Double.parseDouble(currentNumber[0]) - Double.parseDouble(currentNumber[1]);
+            boolean exception = false;
+            double subtractOfCurrent = 0.0;
+            try {
+                subtractOfCurrent = Double.parseDouble(currentNumber[0]) - Double.parseDouble(currentNumber[1]);
+            } catch (Exception e) {
+                exception = true;
+            }
             currentText.setLength(0);
-            currentText = new StringBuilder(Double.toString(subtractOfCurrent));
+            if (exception) {
+                currentText = new StringBuilder("error");
+            } else {
+                currentText = new StringBuilder(Double.toString(subtractOfCurrent));
+            }
         }
         else if (currentText.toString().split("\\*").length == 2) {
             String[] currentNumber = currentText.toString().split("\\*");
-            double multiplyOfCurrent = Double.parseDouble(currentNumber[0]) * Double.parseDouble(currentNumber[1]);
+            boolean exception = false;
+            double multiplyOfCurrent = 0.0;
+            try {
+                multiplyOfCurrent = Double.parseDouble(currentNumber[0]) * Double.parseDouble(currentNumber[1]);
+            } catch (Exception e) {
+                exception = true;
+            }
             currentText.setLength(0);
-            currentText = new StringBuilder(Double.toString(multiplyOfCurrent));
+            if (exception) {
+                currentText = new StringBuilder("error");
+            } else {
+                currentText = new StringBuilder(Double.toString(multiplyOfCurrent));
+            }
         }
         else if (currentText.toString().split("/").length == 2) {
             String[] currentNumber = currentText.toString().split("/");
-            double divisionOfCurrent = Double.parseDouble(currentNumber[0]) / Double.parseDouble(currentNumber[1]);
+            boolean exception = false;
+            double divisionOfCurrent = 0.0;
+            try {
+                divisionOfCurrent = Double.parseDouble(currentNumber[0]) / Double.parseDouble(currentNumber[1]);
+            } catch (ArithmeticException e) {
+                exception = true;
+            }
             currentText.setLength(0);
-            currentText = new StringBuilder(Double.toString(divisionOfCurrent));
+            if (Double.parseDouble(currentNumber[1]) == 0) {
+                currentText = new StringBuilder("can't divide by zero");
+            } else if (exception) {
+                currentText = new StringBuilder("error");
+            } else {
+                currentText = new StringBuilder(Double.toString(divisionOfCurrent));
+            }
         }
         else if (currentText.toString().split("\\^").length == 2) {
             String[] currentNumber = currentText.toString().split("\\^");
-            double exponentOfCurrent = Math.pow(Double.parseDouble(currentNumber[0]), Double.parseDouble(currentNumber[1]));
+            boolean exception = false;
+            double exponentOfCurrent = 0.0;
+            try {
+                exponentOfCurrent = Math.pow(Double.parseDouble(currentNumber[0]), Double.parseDouble(currentNumber[1]));
+            } catch (Exception e) {
+                exception = true;
+            }
             currentText.setLength(0);
-            currentText = new StringBuilder(Double.toString(exponentOfCurrent));
+            if (exception) {
+                currentText = new StringBuilder("error");
+            } else {
+                currentText = new StringBuilder(Double.toString(exponentOfCurrent));
+            }
         }
         String[] decimal = currentText.toString().split("\\.");
         if (decimal.length > 1) {
